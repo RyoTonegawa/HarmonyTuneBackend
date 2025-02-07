@@ -1,0 +1,69 @@
+### 🚀 Kotlin / Gradle / IntelliJ IDEA `.gitignore` ###
+
+# IntelliJ IDEA 用の不要なファイル
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+logs/
+run/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Gradle のキャッシュ関連
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.properties
+**/build/
+**/out/
+.gradle/
+gradle-app.setting
+
+# JAR / Javadoc / ローカルライブラリ
+*.jar
+*.war
+*.ear
+*.class
+*.log
+*.pyc
+*.pyo
+*.swp
+*.DS_Store
+
+# OS固有のファイル
+Thumbs.db
+.DS_Store
+*.swp
+*.swo
+
+# Kotlin/Java の IDE 設定ファイル
+*.idea/
+*.vscode/
+*.classpath
+*.project
+*.settings/
+*.factorypath
+target/
+bin/
+
+# ローカル設定
+.env
+.env.local
+application-local.properties
+
+# Gradle キャッシュ
+.gradle/
+gradle-app.setting
+.gradle-local/
+
+# Gradle で生成されたファイル
+build/
+bin/
+!gradle/wrapper/gradle-wrapper.properties
+
+# Log / Temp / System files
+*.log
+logs/
+temp/
+hs_err_pid*

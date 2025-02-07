@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController  
 
 @RestController
-@RequestMapping("/check-chord")
+@RequestMapping("/chord")
 class CheckChordController(
     private val checkChordUseCase: CheckChordUseCase
 ) {
