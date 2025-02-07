@@ -14,7 +14,7 @@ enum class ChordEnum(
     IV_MAJOR(listOf(4.0, 6.0, 1.0), "M", "IV_MAJOR"),
     V_MAJOR(listOf(5.0, 7.0, 2.0), "M", "V_MAJOR"),
     VI_MINOR(listOf(6.0, 1.0, 3.0), "m", "VI_MINOR"),
-    VII_DIMINISHED(listOf(7.0, 2.0, 4.0), "m-5", "VII_DIMINISHED");
+    VII_DIMINISHED(listOf(7.0, 2.0, 4.0), "dim(m-5)", "VII_DIMINISHED");
 
     // マイナーキーのダイアトニックコード
     // I_MINOR(listOf(1.0, 2.5, 5.0), "I_MINOR"),
