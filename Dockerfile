@@ -1,24 +1,24 @@
-# ベースイメージ
-FROM eclipse-temurin:17-jdk AS build
+# ベースイメージ（JVM 用）
+FROM quay.io/quarkus/quarkus-jvm:latest AS build
 
-# 作業ディレクトリを作成
+# 作業ディレクトリ
 WORKDIR /app
 
-# 必要なファイルをコピー
+# ソースコードをコピー
 COPY . .
 
-# Gradle キャッシュを活用してビルドを最適化
-RUN ./gradlew clean build -x test
+# Quarkus アプリをビルド
+RUN ./mvnw package -DskipTests
 
-# 最小限のランタイムイメージを使用
+# 軽量なランタイムイメージ
 FROM eclipse-temurin:17-jre
 
 WORKDIR /app
 
-# ビルドされた JAR ファイルをコピー
-COPY --from=build /app/build/libs/*.jar app.jar
+# ビルドした JAR をコピー
+COPY --from=build /app/target/quarkus-app/quarkus-run.jar app.jar
 
-# アプリケーションのポートを指定
+# アプリケーションのポート
 EXPOSE 8080
 
 # アプリケーションを起動
