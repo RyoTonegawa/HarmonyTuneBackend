@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.harmonytune.backend.HarmonyTuneBackendApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-02-05T15:54:30" hostname="RyoToneagwanoMacBook-Air.local" time="0.304">
+<testsuite name="com.harmonytune.backend.HarmonyTuneBackendApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-02-07T06:28:36" hostname="RyoToneagwanoMacBook-Air.local" time="0.285">
   <properties/>
-  <testcase name="contextLoads()" classname="com.harmonytune.backend.HarmonyTuneBackendApplicationTests" time="0.304"/>
-  <system-out><![CDATA[00:54:29.533 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.harmonytune.backend.HarmonyTuneBackendApplicationTests]: HarmonyTuneBackendApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-00:54:29.571 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.harmonytune.backend.HarmonyTuneBackendApplication for test class com.harmonytune.backend.HarmonyTuneBackendApplicationTests
+  <testcase name="contextLoads()" classname="com.harmonytune.backend.HarmonyTuneBackendApplicationTests" time="0.285"/>
+  <system-out><![CDATA[15:28:36.044 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.harmonytune.backend.HarmonyTuneBackendApplicationTests]: HarmonyTuneBackendApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:28:36.077 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.harmonytune.backend.HarmonyTuneBackendApplication for test class com.harmonytune.backend.HarmonyTuneBackendApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -14,10 +14,10 @@
 
  :: Spring Boot ::                (v3.4.2)
 
-2025-02-06T00:54:29.694+09:00  INFO 6124 --- [Harmony Tune Backend] [    Test worker] c.h.b.HarmonyTuneBackendApplicationTests : Starting HarmonyTuneBackendApplicationTests using Java 17.0.14 with PID 6124 (started by ryotoneagwa in /Users/ryotoneagwa/Desktop/Github/HarmonyTuneBackend)
-2025-02-06T00:54:29.695+09:00  INFO 6124 --- [Harmony Tune Backend] [    Test worker] c.h.b.HarmonyTuneBackendApplicationTests : No active profile set, falling back to 1 default profile: "default"
-2025-02-06T00:54:30.448+09:00  INFO 6124 --- [Harmony Tune Backend] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2025-02-06T00:54:30.481+09:00  INFO 6124 --- [Harmony Tune Backend] [    Test worker] c.h.b.HarmonyTuneBackendApplicationTests : Started HarmonyTuneBackendApplicationTests in 0.865 seconds (process running for 1.263)
+2025-02-07T15:28:36.215+09:00  INFO 10986 --- [Harmony Tune Backend] [    Test worker] c.h.b.HarmonyTuneBackendApplicationTests : Starting HarmonyTuneBackendApplicationTests using Java 17.0.14 with PID 10986 (started by ryotoneagwa in /Users/ryotoneagwa/Desktop/Github/HarmonyTuneBackend)
+2025-02-07T15:28:36.216+09:00  INFO 10986 --- [Harmony Tune Backend] [    Test worker] c.h.b.HarmonyTuneBackendApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2025-02-07T15:28:36.925+09:00  INFO 10986 --- [Harmony Tune Backend] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-02-07T15:28:36.951+09:00  INFO 10986 --- [Harmony Tune Backend] [    Test worker] c.h.b.HarmonyTuneBackendApplicationTests : Started HarmonyTuneBackendApplicationTests in 0.829 seconds (process running for 1.213)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

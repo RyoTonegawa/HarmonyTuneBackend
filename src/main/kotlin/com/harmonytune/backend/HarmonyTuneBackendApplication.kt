@@ -6,6 +6,6 @@ import org.springframework.boot.runApplication
 @SpringBootApplication
 class HarmonyTuneBackendApplication
 
-fun main(args: Array<String>) {	
-	runApplication<HarmonyTuneBackendApplication>(*args)
+fun main(args: Array<String>) {
+    runApplication<HarmonyTuneBackendApplication>(*args)
 }

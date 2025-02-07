@@ -10,7 +10,7 @@ import lombok.Data
 data class CheckChordRequestDto(
     @field:NotNull
     @field:NotBlank
-    val notes: List<String>,
+    val noteNumberList: List<Int>,
     @field:NotNull
     @field:NotBlank
     val keySignature: String,

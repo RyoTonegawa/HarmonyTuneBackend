@@ -5,6 +5,14 @@ plugins {
     kotlin("plugin.spring") version "1.9.22"
 }
 
+kotlin {
+    jvmToolchain(17)
+}
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -14,7 +22,13 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("io.jsonwebtoken:jjwt:0.9.1")
     implementation("org.springframework.boot:spring-boot-starter-validation")
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
-    }
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
+
+}
+
+group = "com.harmonytune"
+version = "0.0.1-SNAPSHOT"
+
+repositories {
+    mavenCentral()
 } 
