@@ -16,8 +16,9 @@ public class ConvertToDigree {
     ): List<Double> {
         if(keySignature=="C"){
             return noteNumbers.map{ note ->
-                val degree = (note%12)+1
-                DigreeEnum.fromKeyNumber(degree)
+                val mod12 = (note%12)
+                System.out.println("note: "+note+" : mod12: "+mod12+" : degree: "+DigreeEnum.fromKeyNumber(mod12))
+                DigreeEnum.fromKeyNumber(mod12)
             }
         }
         // Cメジャー以外は今後対応
