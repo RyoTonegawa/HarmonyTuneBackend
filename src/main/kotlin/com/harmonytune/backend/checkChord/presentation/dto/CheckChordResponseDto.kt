@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotNull  // 追加
 import lombok.AllArgsConstructor
 import lombok.Data
 import com.harmonytune.backend.checkChord.domain.model.Chord
+import com.harmonytune.backend.checkChord.domain.model.Note
 
 @Data
 @AllArgsConstructor

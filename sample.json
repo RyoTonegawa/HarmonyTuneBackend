@@ -1,31 +1,29 @@
+
+//キーC CEG
 {
-  "chordList": [
-    {
-      "digreeList": [
-        1.0,
-        3.0,
-        5.0
-      ],
-      "quality": "M",
-      "chordName": "I_MAJOR"
-    },
-    {
-      "digreeList": [
-        1.0,
-        3.0,
-        5.0
-      ],
-      "quality": "M",
-      "chordName": "I_MAJOR"
-    },
-    {
-      "digreeList": [
-        1.0,
-        3.0,
-        5.0
-      ],
-      "quality": "M",
-      "chordName": "I_MAJOR"
-    }
-  ]
+  "noteNumberList": [
+      60,
+      64,
+      67
+  ],
+  "keySignature": "C"
+}
+
+//キーC DFA octave 4
+{
+  "noteNumberList": [
+      62,
+      65,
+      69
+  ],
+  "keySignature": "C"
+}
+//キーC DFA octave 5
+{
+  "noteNumberList": [
+      74,
+      77,
+      81
+  ],
+  "keySignature": "C"
 }
