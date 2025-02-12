@@ -27,7 +27,6 @@ class NoteService(
         createNote(
           degreeList,
           noteNumberList,
-          eachChord.rootNoteNumber
         )
       )
     }
@@ -35,9 +34,8 @@ class NoteService(
   }
   fun createNote(
     degreeList:List<GetDegreeDto>,
-    noteNumberList: List<Int>,
-    rootNoteNumber: Int
-    ): List<Note> {
+    noteNumberList: List<Int>
+  ): List<Note> {
     val noteList = degreeList.map{ eachDegree ->
       // DegreeとNote Number対応づける
       val noteNumber:Int = determineChordToneNoteNumber(
@@ -46,13 +44,6 @@ class NoteService(
         noteNumberList
       );
       val semitoneInterval:Int = eachDegree.semitoneInterval; 
-      val equalTemperamentFrequency:Double 
-        = frequencyService.calculateEqualTemperamentFrequency(noteNumber);
-      
-      val justNotation:Double = frequencyService.calculateJustIntonationFrequency(
-        eachDegree.degree,
-        noteNumber
-      );
 
       Note(
         eachDegree.degree,
@@ -60,11 +51,8 @@ class NoteService(
         getNoteNameWithOctave(noteNumber),
         semitoneInterval,
         intervalService.getDegree(semitoneInterval),
-        justNotation,
-        equalTemperamentFrequency,
         frequencyService.calculateCentsDifference(
-          justNotation, 
-          equalTemperamentFrequency
+          eachDegree.degree
         )
       )
     }

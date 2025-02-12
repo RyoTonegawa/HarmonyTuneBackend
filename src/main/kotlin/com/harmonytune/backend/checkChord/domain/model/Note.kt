@@ -17,10 +17,10 @@ public class Note(
     val semiToneInterval: Int,
     // 度数の名称
     val degreeName: String,
-    // 純正律の周波数
-    val justNotation: Double,
-    // 平均律の周波数
-    val equalTemperament: Double,
+    // // 純正律の周波数
+    // val justNotation: Double,
+    // // 平均律の周波数
+    // val equalTemperament: Double,
     //　　平均律から純正律へ直すときのセント差
     val centsDifference: Double,
 ) 

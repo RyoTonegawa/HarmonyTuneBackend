@@ -13,9 +13,10 @@ class OctaveService {
     return 440.0 * Math.pow(2.0, (octave - 4.0))
   }
   // 各オクターブのCの純正律のピッチ
-  // A4が440の時C4は264.0
+  // A4が440の時C4は264.0になるように、Aのピッチから0.6倍する
   fun getJustIntonationCPitch(noteNumber: Int): Double {
-    val cPitch = getStandardPitch(noteNumber) * 3/5;
+    val cPitch = getStandardPitch(noteNumber) * (3.0 / 5.0)
     return cPitch
   }
+  
 }
