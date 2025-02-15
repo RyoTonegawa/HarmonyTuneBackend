@@ -20,13 +20,15 @@ INSERT INTO chord_master (root, chord_name, tones, degrees) VALUES
 ('C', 'Augmented', '["C", "E", "G#"]', '["root", "major_third", "augmented_fifth"]'),
 ('C', 'Suspended 2nd', '["C", "D", "G"]', '["root", "major_second", "perfect_fifth"]'),
 ('C', 'Suspended 4th', '["C", "F", "G"]', '["root", "perfect_fourth", "perfect_fifth"]'),
-('C', 'Add 9', '["C", "E", "G", "D"]', '["root", "major_third", "perfect_fifth", "ninth"]'),
-('C', 'Major 9th', '["C", "E", "G", "B", "D"]', '["root", "major_third", "perfect_fifth", "major_seventh", "ninth"]'),
-('C', 'Minor 9th', '["C", "D#", "G", "A#", "D"]', '["root", "minor_third", "perfect_fifth", "minor_seventh", "ninth"]'),
-('C', 'Major 11th', '["C", "E", "G", "B", "D", "F"]', '["root", "major_third", "perfect_fifth", "major_seventh", "ninth", "eleventh"]'),
-('C', 'Minor 11th', '["C", "D#", "G", "A#", "D", "F"]', '["root", "minor_third", "perfect_fifth", "minor_seventh", "ninth", "eleventh"]'),
-('C', 'Major 13th', '["C", "E", "G", "B", "D", "F", "A"]', '["root", "major_third", "perfect_fifth", "major_seventh", "ninth", "eleventh", "thirteenth"]'),
-('C', 'Minor 13th', '["C", "D#", "G", "A#", "D", "F", "A"]', '["root", "minor_third", "perfect_fifth", "minor_seventh", "ninth", "eleventh", "thirteenth"]');
+('C', 'Add 9', '["C", "E", "G", "D"]', '["root", "major_third", "perfect_fifth", "major_ninth"]'),
+('C', 'Major 9th', '["C", "E", "G", "B", "D"]', '["root", "major_third", "perfect_fifth", "major_seventh", "major_ninth"]'),
+('C', 'Minor 9th', '["C", "D#", "G", "A#", "D"]', '["root", "minor_third", "perfect_fifth", "minor_seventh", "minor_ninth"]'),
+('C', 'Major 11th', '["C", "E", "G", "B", "D", "F"]', '["root", "major_third", "perfect_fifth", "major_seventh", "major_ninth", "perfect_eleventh"]'),
+('C', 'Minor 11th', '["C", "D#", "G", "A#", "D", "F"]', '["root", "minor_third", "perfect_fifth", "minor_seventh", "minor_ninth", "perfect_eleventh"]'),
+('C', 'Major 13th', '["C", "E", "G", "B", "D", "F", "A"]', '["root", "major_third", "perfect_fifth", "major_seventh", "major_ninth", "perfect_eleventh", "major_thirteenth"]'),
+('C', 'Minor 13th', '["C", "D#", "G", "A#", "D", "F", "A"]', '["root", "minor_third", "perfect_fifth", "minor_seventh", "minor_ninth", "perfect_eleventh", "major_thirteenth"]');
+
+
 -- D のコード
 -- D のコード
 INSERT INTO chord_master (root, chord_name, tones, degrees) VALUES 
@@ -39,13 +41,13 @@ INSERT INTO chord_master (root, chord_name, tones, degrees) VALUES
 ('D', 'Augmented', '["D", "F#", "A#"]', '["root", "major_third", "augmented_fifth"]'),
 ('D', 'Suspended 2nd', '["D", "E", "A"]', '["root", "major_second", "perfect_fifth"]'),
 ('D', 'Suspended 4th', '["D", "G", "A"]', '["root", "perfect_fourth", "perfect_fifth"]'),
-('D', 'Add 9', '["D", "F#", "A", "E"]', '["root", "major_third", "perfect_fifth", "ninth"]'),
-('D', 'Major 9th', '["D", "F#", "A", "C#", "E"]', '["root", "major_third", "perfect_fifth", "major_seventh", "ninth"]'),
-('D', 'Minor 9th', '["D", "F", "A", "C", "E"]', '["root", "minor_third", "perfect_fifth", "minor_seventh", "ninth"]'),
-('D', 'Major 11th', '["D", "F#", "A", "C#", "E", "G"]', '["root", "major_third", "perfect_fifth", "major_seventh", "ninth", "eleventh"]'),
-('D', 'Minor 11th', '["D", "F", "A", "C", "E", "G"]', '["root", "minor_third", "perfect_fifth", "minor_seventh", "ninth", "eleventh"]'),
-('D', 'Major 13th', '["D", "F#", "A", "C#", "E", "G", "B"]', '["root", "major_third", "perfect_fifth", "major_seventh", "ninth", "eleventh", "thirteenth"]'),
-('D', 'Minor 13th', '["D", "F", "A", "C", "E", "G", "B"]', '["root", "minor_third", "perfect_fifth", "minor_seventh", "ninth", "eleventh", "thirteenth"]');
+('D', 'Add 9', '["D", "F#", "A", "E"]', '["root", "major_third", "perfect_fifth", "major_ninth"]'),
+('D', 'Major 9th', '["D", "F#", "A", "C#", "E"]', '["root", "major_third", "perfect_fifth", "major_seventh", "major_ninth"]'),
+('D', 'Minor 9th', '["D", "F", "A", "C", "E"]', '["root", "minor_third", "perfect_fifth", "minor_seventh", "minor_ninth"]'),
+('D', 'Major 11th', '["D", "F#", "A", "C#", "E", "G"]', '["root", "major_third", "perfect_fifth", "major_seventh", "major_ninth", "perfect_eleventh"]'),
+('D', 'Minor 11th', '["D", "F", "A", "C", "E", "G"]', '["root", "minor_third", "perfect_fifth", "minor_seventh", "minor_ninth", "perfect_eleventh"]'),
+('D', 'Major 13th', '["D", "F#", "A", "C#", "E", "G", "B"]', '["root", "major_third", "perfect_fifth", "major_seventh", "major_ninth", "perfect_eleventh", "major_thirteenth"]'),
+('D', 'Minor 13th', '["D", "F", "A", "C", "E", "G", "B"]', '["root", "minor_third", "perfect_fifth", "minor_seventh", "minor_ninth", "perfect_eleventh", "major_thirteenth"]');
 
 -- E のコード
 INSERT INTO chord_master (root, chord_name, tones, degrees) VALUES 
@@ -58,16 +60,14 @@ INSERT INTO chord_master (root, chord_name, tones, degrees) VALUES
 ('E', 'Augmented', '["E", "G#", "C"]', '["root", "major_third", "augmented_fifth"]'),
 ('E', 'Suspended 2nd', '["E", "F#", "B"]', '["root", "major_second", "perfect_fifth"]'),
 ('E', 'Suspended 4th', '["E", "A", "B"]', '["root", "perfect_fourth", "perfect_fifth"]'),
-('E', 'Add 9', '["E", "G#", "B", "F#"]', '["root", "major_third", "perfect_fifth", "ninth"]'),
-('E', 'Major 9th', '["E", "G#", "B", "D#", "F#"]', '["root", "major_third", "perfect_fifth", "major_seventh", "ninth"]'),
-('E', 'Minor 9th', '["E", "G", "B", "D", "F#"]', '["root", "minor_third", "perfect_fifth", "minor_seventh", "ninth"]'),
-('E', 'Major 11th', '["E", "G#", "B", "D#", "F#", "A"]', '["root", "major_third", "perfect_fifth", "major_seventh", "ninth", "eleventh"]'),
-('E', 'Minor 11th', '["E", "G", "B", "D", "F#", "A"]', '["root", "minor_third", "perfect_fifth", "minor_seventh", "ninth", "eleventh"]'),
-('E', 'Major 13th', '["E", "G#", "B", "D#", "F#", "A", "C#"]', '["root", "major_third", "perfect_fifth", "major_seventh", "ninth", "eleventh", "thirteenth"]'),
-('E', 'Minor 13th', '["E", "G", "B", "D", "F#", "A", "C#"]', '["root", "minor_third", "perfect_fifth", "minor_seventh", "ninth", "eleventh", "thirteenth"]');
+('E', 'Add 9', '["E", "G#", "B", "F#"]', '["root", "major_third", "perfect_fifth", "major_ninth"]'),
+('E', 'Major 9th', '["E", "G#", "B", "D#", "F#"]', '["root", "major_third", "perfect_fifth", "major_seventh", "major_ninth"]'),
+('E', 'Minor 9th', '["E", "G", "B", "D", "F#"]', '["root", "minor_third", "perfect_fifth", "minor_seventh", "minor_ninth"]'),
+('E', 'Major 11th', '["E", "G#", "B", "D#", "F#", "A"]', '["root", "major_third", "perfect_fifth", "major_seventh", "major_ninth", "perfect_eleventh"]'),
+('E', 'Minor 11th', '["E", "G", "B", "D", "F#", "A"]', '["root", "minor_third", "perfect_fifth", "minor_seventh", "minor_ninth", "perfect_eleventh"]'),
+('E', 'Major 13th', '["E", "G#", "B", "D#", "F#", "A", "C#"]', '["root", "major_third", "perfect_fifth", "major_seventh", "major_ninth", "perfect_eleventh", "major_thirteenth"]'),
+('E', 'Minor 13th', '["E", "G", "B", "D", "F#", "A", "C#"]', '["root", "minor_third", "perfect_fifth", "minor_seventh", "minor_ninth", "perfect_eleventh", "major_thirteenth"]');
 
-
--- F のコード
 -- F のコード
 INSERT INTO chord_master (root, chord_name, tones, degrees) VALUES 
 ('F', 'Major', '["F", "A", "C"]', '["root", "major_third", "perfect_fifth"]'),
@@ -341,20 +341,7 @@ INSERT INTO chord_master (root, chord_name, tones, degrees) VALUES
 ('A#', 'Major Minor 7th', '["A#", "C#", "F", "G#"]', '["root", "major_third", "perfect_fifth", "minor_seventh"]'),
 ('B', 'Major Minor 7th', '["B", "D#", "F#", "A"]', '["root", "major_third", "perfect_fifth", "minor_seventh"]');
 
--- Minor Major 7th のコード
-INSERT INTO chord_master (root, chord_name, tones, degrees) VALUES 
-('C', 'Minor Major 7th', '["C", "D#", "G", "B"]', '["root", "minor_third", "perfect_fifth", "major_seventh"]'),
-('C#', 'Minor Major 7th', '["C#", "E", "G#", "C"]', '["root", "minor_third", "perfect_fifth", "major_seventh"]'),
-('D', 'Minor Major 7th', '["D", "F", "A", "C#"]', '["root", "minor_third", "perfect_fifth", "major_seventh"]'),
-('D#', 'Minor Major 7th', '["D#", "F#", "A#", "D"]', '["root", "minor_third", "perfect_fifth", "major_seventh"]'),
-('E', 'Minor Major 7th', '["E", "G", "B", "D#"]', '["root", "minor_third", "perfect_fifth", "major_seventh"]'),
-('F', 'Minor Major 7th', '["F", "G#", "C", "E"]', '["root", "minor_third", "perfect_fifth", "major_seventh"]'),
-('F#', 'Minor Major 7th', '["F#", "A", "C#", "F"]', '["root", "minor_third", "perfect_fifth", "major_seventh"]'),
-('G', 'Minor Major 7th', '["G", "A#", "D", "F#"]', '["root", "minor_third", "perfect_fifth", "major_seventh"]'),
-('G#', 'Minor Major 7th', '["G#", "B", "D#", "G"]', '["root", "minor_third", "perfect_fifth", "major_seventh"]'),
-('A', 'Minor Major 7th', '["A", "C", "E", "G#"]', '["root", "minor_third", "perfect_fifth", "major_seventh"]'),
-('A#', 'Minor Major 7th', '["A#", "C#", "F", "A"]', '["root", "minor_third", "perfect_fifth", "major_seventh"]'),
-('B', 'Minor Major 7th', '["B", "D", "F#", "A#"]', '["root", "minor_third", "perfect_fifth", "major_seventh"]');
+-- Minor Major 7th ＝Dominant７thなので省略
 
 -- Minor Major 9th のコード
 INSERT INTO chord_master (root, chord_name, tones, degrees) VALUES 
