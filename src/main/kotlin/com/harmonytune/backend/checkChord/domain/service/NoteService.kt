@@ -50,15 +50,21 @@ class NoteService(
     noteNumberList:List<Int>,
   ): List<Note> {
     val noteList = determineChordDto.degreeInChordList.map{ eachDegree ->
+      val degreeNameIndex = determineChordDto.degreeInChordList.indexOf(eachDegree);
+
+      if (degreeNameIndex == -1) {
+          throw IllegalArgumentException("Degree $eachDegree not found in ${determineChordDto.degreeInChordList}")
+      }
+      val chordTone = determineChordDto.chordToneList[degreeNameIndex];
       // DegreeとNote Number対応づける
       val noteNumber:Int = determineChordToneNoteNumber(
-        determineChordDto.rootNoteName,
+        chordTone,
         noteNumberList
       );
       Note(
         eachDegree,
         noteNumber,
-        getNoteNameWithOctave(noteNumber),
+        chordTone,
         frequencyService.calculateCentsDifference(
           eachDegree
         )
@@ -76,20 +82,20 @@ class NoteService(
    * chordToneDegreeに対応するノートナンバーを特定する
    */
   fun determineChordToneNoteNumber(
-    rootNoteName:String,
+    chordToneNoteName:String,
     noteNumberList: List<Int>
   ): Int {
     // ChordMasterDto.rootの音名に一致するNoteNumberを返す
     // ROOTの音のMOD１２を出す
     // ROOTとのnotenumberの差分がMOD１２と一致するNoteNumberを返す
-    val rootNumberMod = noteNameToMod12Map[rootNoteName]?:
+    val chordToneNumberMod = noteNameToMod12Map[chordToneNoteName]?:
       throw IllegalArgumentException("Not Found in noteNameToMod12Map");
-    noteNumberList.map{eachNoteNumber->
-      val noteNumberDiffs = Math.abs(rootNumberMod-(eachNoteNumber%12));
 
-      if((noteNumberDiffs)==rootNumberMod){
+    noteNumberList.map{eachNoteNumber->
+      if((eachNoteNumber%12)==chordToneNumberMod){
         return eachNoteNumber;
       }
+
     }
     throw IllegalArgumentException("Error in determineChordToneNoteNumber");
   }

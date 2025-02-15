@@ -30,7 +30,8 @@ public data class DetermineChordDto(
     val chordDegreeName: String,
     val rootNoteNumber: Int,
     val rootDegree: Double,
-    val degreeInChordList: List<String>
+    val degreeInChordList: List<String>,
+    val chordToneList:List<String>
 )
 @Service
 class ChordService(
@@ -66,7 +67,8 @@ class ChordService(
                     chordDegreeName = chordMaster.chordName,
                     rootNoteNumber = rootNoteNumber[0],
                     rootDegree = rootDegree,
-                    degreeInChordList = chordMaster.degrees
+                    degreeInChordList = chordMaster.degrees,
+                    chordToneList=  chordMaster.tones
                 )
             }
         }
