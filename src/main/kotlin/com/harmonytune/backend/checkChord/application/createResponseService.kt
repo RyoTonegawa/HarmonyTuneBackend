@@ -18,13 +18,12 @@ class CreateResponseService {
             val chordTones:List<Note> = CreateNoteListDtoList.find { eachNoteList -> 
               eachNoteList.chordName == eachChord.chordDegreeName
             }?.noteList ?: emptyList()
-
               Chord(
+                eachChord.rootNoteName,
                 eachChord.chordDegreeName, 
                 eachChord.rootDegree,
                 eachChord.rootNoteNumber, 
-                eachChord.degreeList, 
-                eachChord.quality,
+                eachChord.degreeInChordList,
                 chordTones
               )
           }

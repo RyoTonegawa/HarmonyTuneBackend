@@ -4,55 +4,63 @@ import org.springframework.stereotype.Service
 import com.harmonytune.backend.checkChord.domain.model.Note
 import com.harmonytune.backend.checkChord.domain.model.Chord
 import com.harmonytune.backend.checkChord.domain.service.DetermineChordDto
-import com.harmonytune.backend.checkChord.domain.dto.degreeService.GetDegreeDto
-import com.harmonytune.backend.checkChord.domain.service.FrequencyService
 
 public data class CreateNoteListDto(
   val chordName: String,
   val noteList: List<Note>
 )
+
+val noteNameToMod12Map = mapOf(
+    "C" to 0,
+    "C#" to 1,
+    "D" to 2,
+    "D#" to 3,
+    "E" to 4,
+    "F" to 5,
+    "F#" to 6,
+    "G" to 7,
+    "G#" to 8,
+    "A" to 9,
+    "A#" to 10,
+    "B" to 11
+)
+
 @Service
 class NoteService(
-  private val intervalService: IntervalService,
-  private val frequencyService: FrequencyService
+  private val frequencyService: FrequencyService,
+  private val degreeService: DegreeService
 ) {
   fun createNoteList(
     chordList: List<DetermineChordDto>,
-    degreeList:List<GetDegreeDto>,
     noteNumberList: List<Int>
   ): List<CreateNoteListDto> {
     val noteList = chordList.map{ eachChord ->
       CreateNoteListDto(
         eachChord.chordDegreeName,
         createNote(
-          degreeList,
-          noteNumberList,
+          eachChord,
+          noteNumberList
         )
       )
     }
     return noteList
   }
   fun createNote(
-    degreeList:List<GetDegreeDto>,
-    noteNumberList: List<Int>
+    determineChordDto:DetermineChordDto,
+    noteNumberList:List<Int>,
   ): List<Note> {
-    val noteList = degreeList.map{ eachDegree ->
+    val noteList = determineChordDto.degreeInChordList.map{ eachDegree ->
       // DegreeとNote Number対応づける
       val noteNumber:Int = determineChordToneNoteNumber(
-        eachDegree.degree,
-        degreeList,
+        determineChordDto.rootNoteName,
         noteNumberList
       );
-      val semitoneInterval:Int = eachDegree.semitoneInterval; 
-
       Note(
-        eachDegree.degree,
+        eachDegree,
         noteNumber,
         getNoteNameWithOctave(noteNumber),
-        semitoneInterval,
-        intervalService.getDegree(semitoneInterval),
         frequencyService.calculateCentsDifference(
-          eachDegree.degree
+          eachDegree
         )
       )
     }
@@ -64,29 +72,25 @@ class NoteService(
     val octave = (noteNumber / 12) - 1 // オクターブを計算
     return "$noteName$octave"
   }
+  /**
+   * chordToneDegreeに対応するノートナンバーを特定する
+   */
   fun determineChordToneNoteNumber(
-    chordToneDegree: Double,
-    degreeDtoList:List<GetDegreeDto>,
+    rootNoteName:String,
     noteNumberList: List<Int>
   ): Int {
-    var semitoneInterval = -1;
-    // デグリーとdegreeDtoListのdegreeを比較して、今回のコードトーンのsemitoneIntervalを取得する
-    for (degreeDto in degreeDtoList) {
-      if (chordToneDegree== degreeDto.degree) {
-        semitoneInterval=degreeDto.semitoneInterval
-        break;
+    // ChordMasterDto.rootの音名に一致するNoteNumberを返す
+    // ROOTの音のMOD１２を出す
+    // ROOTとのnotenumberの差分がMOD１２と一致するNoteNumberを返す
+    val rootNumberMod = noteNameToMod12Map[rootNoteName]?:
+      throw IllegalArgumentException("Not Found in noteNameToMod12Map");
+    noteNumberList.map{eachNoteNumber->
+      val noteNumberDiffs = Math.abs(rootNumberMod-(eachNoteNumber%12));
+
+      if((noteNumberDiffs)==rootNumberMod){
+        return eachNoteNumber;
       }
     }
-    // コードトーンのsemitoneIntervalが取得できなかったらエラー
-    if(semitoneInterval == -1){
-      throw IllegalArgumentException("Invalid chord tone degree or note number list")
-    }
-    // noteNumberListの中で、semitoneIntervalと一致するものを探す 
-    for(noteNumber in noteNumberList){
-      if(noteNumber % 12 == semitoneInterval){
-        return noteNumber
-      }
-    }
-    throw IllegalArgumentException("Invalid semitone interval")
+    throw IllegalArgumentException("Error in determineChordToneNoteNumber");
   }
 }
