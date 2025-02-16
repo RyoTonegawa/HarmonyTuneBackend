@@ -19,9 +19,6 @@ class ChordMasterRepository(
 
     suspend fun getChordMasters(noteNameList: List<String>): List<ChordMasterDto> = withContext(Dispatchers.IO) {
         val jsonArray = noteNameList.joinToString(prefix = "[", postfix = "]") { "\"$it\"" }
-        System.out.println("---------------------");
-        System.out.println("jsonArray"+jsonArray);
-        System.out.println("---------------------");
 
         val response = api.getChordMastersByExactTones(
             apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlmdGlhc2l4cGF3bmZ2bmR4b3FjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzkyNDE1NDgsImV4cCI6MjA1NDgxNzU0OH0.5z34KlPDyGiKTmUka0aurtrCuD04NRQsko6fGk1M5k4",  // 環境変数などで管理
@@ -30,7 +27,6 @@ class ChordMasterRepository(
             containedFilter = "cd.$jsonArray"
         )
 
-        System.out.println("response"+response);
         // もし tones が文字列で取得された場合、Gson を使って List<String> に変換
         response.map { dto ->
             dto.copy(

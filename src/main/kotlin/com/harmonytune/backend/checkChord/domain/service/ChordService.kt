@@ -42,7 +42,8 @@ class ChordService(
             noteNumberList: List<Int>
             ): List<DetermineChordDto> {
             // 逆引き用のマップ（"C" → 0, "C#" → 1, ...）
-            val inverseNoteNumberMap: Map<String, Int> = noteNameMap.entries.associate { (key, value) -> value to key }
+            // 移調する場合はここで調整する
+            val inverseNoteNumberMap: Map<String, Int> = noteNameMap.entries.associate { (key, value) -> value to key };
             val noteNameList: List<String> = noteNumberList.map { noteNumber -> 
                 noteNameMap[noteNumber%12] ?: throw IllegalArgumentException("Invalid note number: $noteNumber") 
             }

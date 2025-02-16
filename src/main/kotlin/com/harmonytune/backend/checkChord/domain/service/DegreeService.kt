@@ -5,28 +5,28 @@ import org.springframework.stereotype.Service
 @Service
 class DegreeService {
   private val degreeStringToSemitone: Map<String, Double> = mapOf(
-    "root" to 0.0,
-    "minor_second" to 1.0,
-    "major_second" to 2.0,
-    "minor_third" to 3.0,
-    "major_third" to 4.0,
-    "perfect_fourth" to 5.0,
-    "augmented_fourth" to 6.0,
-    "diminished_fifth" to 6.0,
-    "perfect_fifth" to 7.0,
-    "minor_sixth" to 8.0,
-    "major_sixth" to 9.0,
-    "minor_seventh" to 10.0,
-    "major_seventh" to 11.0,
-    "octave" to 0.0,  // オクターブは root perfect_fifth
-    "minor_ninth" to 1.0,  // 9th = 2nd
-    "major_ninth" to 2.0,  // 9th = 2nd
-    "minor_eleventh" to 5.0,  // 11th = 4th
-    "perfect_eleventh" to 5.0,  // 11th = 4th
-    "augmented_eleventh" to 6.0,  // #11 = #4
-    "minor_thirteenth" to 8.0,  // 13th = 6th
-    "major_thirteenth" to 9.0  // 13th = 6th
-  )
+    "ルート" to 0.0,
+    "短2度" to 1.0,
+    "長2度" to 2.0,
+    "短3度" to 3.0,
+    "長3度" to 4.0,
+    "完全4度" to 5.0,
+    "増4度" to 6.0,
+    "減5度" to 6.0,
+    "完全5度" to 7.0,
+    "短6度" to 8.0,
+    "長6度" to 9.0,
+    "短7度" to 10.0,
+    "長7度" to 11.0,
+    "オクターブ" to 0.0,
+    "短9度" to 1.0,  
+    "長9度" to 2.0,  
+    "短11度" to 5.0,  
+    "完全11度" to 5.0,  
+    "増11度" to 6.0,  
+    "短13度" to 8.0,  
+    "長13度" to 9.0  
+)
   fun getSemitoneIntervalFromDegreeSemitone(degree:String):Double{
     return degreeStringToSemitone[degree] ?:
       throw IllegalArgumentException("Invalid degree String");
